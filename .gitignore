@@ -3,5 +3,3 @@ node_modules
 secrets.json
 package-lock.json
 .eslintrc.json
-axios.min.js
-vue.js
