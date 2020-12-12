@@ -38,7 +38,7 @@ module.exports.upload = (req, res, next) => {
       fs.unlink(path, () => {});
     })
     .catch(err => {
-      console.log(err, "promise failure");
+      console.log(err, "err in uploading");
       res.sendStatus(500);
     });
 };
