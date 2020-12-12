@@ -31,7 +31,6 @@ const uploader = multer({
     fileSize: 2097152
   }
 });
-/////////do not TOUCH
 // DO NOT TOUCH
 // DO NOT TOUCH
 // DO NOT TOUCH
@@ -41,7 +40,7 @@ app.use(express.json());
 app.get("/images", (req, res) => {
   db.getImages()
     .then(data => {
-      // console.log("data: ", data);
+      console.log("data: ", data);
       res.json(data);
     })
     .catch(function(err) {
