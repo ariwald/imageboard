@@ -40,7 +40,7 @@ app.use(express.json());
 app.get("/images", (req, res) => {
   db.getImages()
     .then(data => {
-      console.log("data: ", data);
+      console.log("get images data: ", data);
       res.json(data);
     })
     .catch(function(err) {

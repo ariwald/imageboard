@@ -9,8 +9,8 @@ if (process.env.NODE_ENV == "production") {
 }
 
 const s3 = new aws.S3({
-  accessKeyId: secrets.S3_KEY,
-  secretAccessKey: secrets.S3_SECRET
+  accessKeyId: secrets.AWS_KEY,
+  secretAccessKey: secrets.AWS_SECRET
 });
 
 module.exports.upload = (req, res, next) => {
