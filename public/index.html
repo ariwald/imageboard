@@ -5,11 +5,16 @@
     <title>Schwarzwaldkräuter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+
   <body>
     <div id="main">
       <div class="header">
-        <img id="headerPic" src="brasil.jpg" alt="brasil" />
-        <h1>{{heading}}</h1>
+        <img id="headerPic" src="brasil.jpg" alt="" />
+        <div id="headerName">{{heading}}</div>
+      </div>
+
+      <div class="info">
+        <h2>Erklärung dazu ...</h2>
       </div>
 
       <first-component
@@ -20,27 +25,37 @@
       ></first-component>
 
       <form>
-        <input v-model="title" type="tex" name="title" placeholder="title" />
+        <input
+          v-model="title"
+          type="tex"
+          name="title"
+          placeholder="Kräuter Name"
+        />
+
         <input
           v-model="description"
           type="tex"
           name="description"
-          placeholder="description"
+          placeholder="Beschreibung"
         />
+
         <input
           v-model="username"
           type="tex"
           name="username"
-          placeholder="username"
+          placeholder="Benutzer"
         />
+
         <input
           @change="handleChange"
           type="file"
           name="file"
           accept="image/*"
         />
-        <button @click="handleClick">submit your picture</button>
+
+        <button @click="handleClick">Bild hochladen</button>
       </form>
+
       <div :class="mainContainer">
         <div v-if="images" v-for="image in images">
           <a :href="'#' + image.id">
@@ -58,7 +73,6 @@
     <script id="image-template" type="text/x-template">
 
       <div class="component">
-          <div class="body">
               <div class="close">
                   <a :href="'#' + previousID">
                       <img id="headerPic2" src="left-arrow.png" alt="previous pic">
@@ -67,10 +81,6 @@
                       <img id="headerPic2" src="right-arrow.png" alt="next pic">
                   </a>
                   <img id="headerPic2" @click='closeModal' src="close.png" alt="close">
-                  <div class="header">
-                      <img id="headerPic2" src="brasil.jpg" alt="brasil">
-                      <h1>{{heading}}</h1>
-                  </div>
               </div>
 
               <div class="sideBySide">
@@ -96,8 +106,6 @@
 
               </div>
 
-
-          </div>
       </div>
     </script>
 
